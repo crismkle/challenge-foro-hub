@@ -5,7 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import tech.challenge.foroHub.domain.Posteo.Posteo;
+import tech.challenge.foroHub.domain.Respuesta.Respuesta;
+import tech.challenge.foroHub.domain.Topico.Topico;
 
 import java.util.List;
 
@@ -24,6 +25,5 @@ public class Usuario {
     private String contrasenia;
     @Enumerated(EnumType.STRING)
     private Perfil perfil;
-    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Posteo> posteos;
+
 }

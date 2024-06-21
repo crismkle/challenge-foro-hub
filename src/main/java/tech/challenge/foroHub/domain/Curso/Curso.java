@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import tech.challenge.foroHub.domain.Posteo.Topico;
+import tech.challenge.foroHub.domain.Topico.Topico;
 
 import java.util.List;
 
@@ -23,6 +23,4 @@ public class Curso {
     private String nombre;
     @Enumerated
     private Categoria categoria;
-    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Topico> topicos;
 }
