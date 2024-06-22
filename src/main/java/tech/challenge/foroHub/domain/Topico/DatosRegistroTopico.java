@@ -1,6 +1,7 @@
 package tech.challenge.foroHub.domain.Topico;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record DatosRegistroTopico(
         @NotBlank
@@ -9,7 +10,7 @@ public record DatosRegistroTopico(
         String mensaje,
         @NotBlank
         String nombreCurso,
-        @NotBlank
+        @NotNull
         Long usuario_id
 ) {
 }

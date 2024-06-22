@@ -20,7 +20,7 @@ public class Respuesta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String mensaje;
-    private LocalDateTime fechaCreacion;
+    private LocalDateTime fecha_creacion;
     @ManyToOne
     @JoinColumn(name = "topico_id")
     private Topico topico;

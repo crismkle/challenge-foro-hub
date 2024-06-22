@@ -10,6 +10,7 @@ import tech.challenge.foroHub.domain.Respuesta.Respuesta;
 import tech.challenge.foroHub.domain.Usuario.Usuario;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Table(name = "topicos")
@@ -25,7 +26,7 @@ public class Topico {
     private Long id;
     private String titulo;
     private String mensaje;
-    private LocalDateTime fechaCreacion;
+    private LocalDateTime fecha_creacion;
     @Enumerated(EnumType.STRING)
     private Estado estado;
     @ManyToOne
@@ -40,7 +41,12 @@ public class Topico {
     public Topico(DatosRegistroTopico datosRegistroTopico) {
         this.titulo = datosRegistroTopico.titulo();
         this.mensaje = datosRegistroTopico.mensaje();
-        this.fechaCreacion = LocalDateTime.now();
+
+        LocalDateTime ahora = LocalDateTime.now();
+        DateTimeFormatter formateador = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String horaFormateada = ahora.format(formateador);
+        this.fecha_creacion = LocalDateTime.parse(horaFormateada, formateador);
+
         this.estado = Estado.SIN_SOLUCION;
 
 
