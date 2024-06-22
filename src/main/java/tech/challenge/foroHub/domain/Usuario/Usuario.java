@@ -22,7 +22,7 @@ public class Usuario {
     private Long id;
     private String nombre;
     private String email;
-    private String contrasenia;
+    private String clave;
     @Enumerated(EnumType.STRING)
     private Perfil perfil;
 
