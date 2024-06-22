@@ -1,4 +1,4 @@
-package tech.challenge.foroHub.domain.Curso;
+package tech.challenge.foroHub.domain.curso;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

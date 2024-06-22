@@ -1,4 +1,4 @@
-package tech.challenge.foroHub.domain.Topico;
+package tech.challenge.foroHub.domain.topico;
 
 public enum Estado {
 

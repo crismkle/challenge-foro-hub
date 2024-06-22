@@ -1,13 +1,13 @@
-package tech.challenge.foroHub.domain.Topico;
+package tech.challenge.foroHub.domain.topico;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tech.challenge.foroHub.domain.Curso.Curso;
-import tech.challenge.foroHub.domain.Respuesta.Respuesta;
-import tech.challenge.foroHub.domain.Usuario.Usuario;
+import tech.challenge.foroHub.domain.curso.Curso;
+import tech.challenge.foroHub.domain.respuesta.Respuesta;
+import tech.challenge.foroHub.domain.usuario.Usuario;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

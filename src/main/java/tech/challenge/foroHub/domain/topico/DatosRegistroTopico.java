@@ -1,4 +1,4 @@
-package tech.challenge.foroHub.domain.Topico;
+package tech.challenge.foroHub.domain.topico;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

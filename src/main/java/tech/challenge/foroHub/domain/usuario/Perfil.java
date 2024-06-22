@@ -1,4 +1,4 @@
-package tech.challenge.foroHub.domain.Usuario;
+package tech.challenge.foroHub.domain.usuario;
 
 public enum Perfil {
 

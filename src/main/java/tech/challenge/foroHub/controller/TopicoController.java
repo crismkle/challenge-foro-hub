@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import tech.challenge.foroHub.domain.Curso.CursoRepository;
-import tech.challenge.foroHub.domain.Topico.DatosRegistroTopico;
-import tech.challenge.foroHub.domain.Topico.DatosRespuestaTopico;
-import tech.challenge.foroHub.domain.Topico.Topico;
-import tech.challenge.foroHub.domain.Topico.TopicoRepository;
-import tech.challenge.foroHub.domain.Usuario.UsuarioRepository;
+import tech.challenge.foroHub.domain.curso.CursoRepository;
+import tech.challenge.foroHub.domain.topico.DatosRegistroTopico;
+import tech.challenge.foroHub.domain.topico.DatosRespuestaTopico;
+import tech.challenge.foroHub.domain.topico.Topico;
+import tech.challenge.foroHub.domain.topico.TopicoRepository;
+import tech.challenge.foroHub.domain.usuario.UsuarioRepository;
 
 import java.net.URI;
 

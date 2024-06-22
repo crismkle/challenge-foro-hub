@@ -1,26 +1,25 @@
-package tech.challenge.foroHub.domain.Curso;
+package tech.challenge.foroHub.domain.usuario;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import tech.challenge.foroHub.domain.Topico.Topico;
 
-import java.util.List;
-
-@Table(name = "cursos")
-@Entity(name = "Curso")
+@Table(name = "usuarios")
+@Entity(name = "Usuario")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Curso {
-
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
+    private String email;
+    private String clave;
     @Enumerated(EnumType.STRING)
-    private Categoria categoria;
+    private Perfil perfil;
+
 }

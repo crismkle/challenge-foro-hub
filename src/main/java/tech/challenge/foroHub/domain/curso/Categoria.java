@@ -1,4 +1,4 @@
-package tech.challenge.foroHub.domain.Curso;
+package tech.challenge.foroHub.domain.curso;
 
 public enum Categoria {
 

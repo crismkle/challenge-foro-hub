@@ -1,11 +1,11 @@
-package tech.challenge.foroHub.domain.Respuesta;
+package tech.challenge.foroHub.domain.respuesta;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import tech.challenge.foroHub.domain.Topico.Topico;
-import tech.challenge.foroHub.domain.Usuario.Usuario;
+import tech.challenge.foroHub.domain.topico.Topico;
+import tech.challenge.foroHub.domain.usuario.Usuario;
 
 import java.time.LocalDateTime;
 
