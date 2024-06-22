@@ -21,6 +21,6 @@ public class Curso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Categoria categoria;
 }
