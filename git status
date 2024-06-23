@@ -1,0 +1,83 @@
+[33mcommit e8f08d45909eb6c34e49455a1eafa2034bfa6109[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Sat Jun 22 15:45:16 2024 -0300
+
+    Tratamiento errores 400 y 404
+
+[33mcommit cc0a59df518a1b8c200a32a482a5f541a1869f30[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Sat Jun 22 13:37:39 2024 -0300
+
+    Devuelve codigo 201 personalizado p/post (2)
+
+[33mcommit 08364c1939cebaa989e610f031ba2b77afd17a6c[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Sat Jun 22 13:37:18 2024 -0300
+
+    Devuelve codigo 201 personalizado p/post
+
+[33mcommit 2b80ff14e8623763f6e9aee173db6f55ac29e762[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Sat Jun 22 12:50:44 2024 -0300
+
+    Migrations inserts
+
+[33mcommit 7526b4059c94e016e7469f498406a4c0e88e5540[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Sat Jun 22 11:26:03 2024 -0300
+
+    Migrations de la BD
+
+[33mcommit 990a0a79670bccd862eba3db6a5a7ee271570d30[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Fri Jun 21 22:13:05 2024 -0300
+
+    Crea repositorios
+
+[33mcommit 6c36e9ad68462b7fe915d3f7e896e5a26ce6c174[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Fri Jun 21 22:12:41 2024 -0300
+
+    Cambios en Topico
+
+[33mcommit 0a6bc8cd52f8457f6146057a2bd182816e06236d[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Fri Jun 21 11:54:16 2024 -0300
+
+    Cambios en BD
+
+[33mcommit ab3b586f0594288136a95aab0393e6ba6b71031a[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Fri Jun 21 10:12:38 2024 -0300
+
+    DTO y Controller de Topico (2)
+
+[33mcommit dda1d222051002d9b5ebea2bef109b424bcbd6bb[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Fri Jun 21 10:11:16 2024 -0300
+
+    DTO y Controller de Topico
+
+[33mcommit 2ab1a22501ab59099ecca87037cc71346b60825c[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Wed Jun 19 21:32:27 2024 -0300
+
+    Cambios en BD
+
+[33mcommit 4e396beed00d5010fa174e081f3095f2092e7d79[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Tue Jun 18 15:32:50 2024 -0300
+
+    Crea las entidades
+
+[33mcommit 5f5435939470046d9406012da511927f29f7ca94[m
+Author: Cristian <122938039+crismkle@users.noreply.github.com>
+Date:   Mon Jun 17 19:41:05 2024 -0300
+
+    Create README.md
+
+[33mcommit 125736b8bef247ba17b26ad13ec09b176215c4c1[m
+Author: CristianM <crism.klee@gmail.com>
+Date:   Mon Jun 17 19:36:09 2024 -0300
+
+    Primer commit

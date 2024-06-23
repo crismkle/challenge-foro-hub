@@ -1,4 +1,4 @@
-package tech.challenge.foroHub.infra;
+package tech.challenge.foroHub.infra.errores;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ public class TratadorDeErrores {
         return ResponseEntity.notFound().build();
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ExceptionHandler(MethodArgumentNotValidException.class)        // En post campos vacios
     public ResponseEntity tratamientoError400(MethodArgumentNotValidException methodArgumentNotValidException){
         var errores = methodArgumentNotValidException.getFieldErrors().stream().map(DatosErrorValidacion::new).toList();
 
