@@ -1,6 +1,5 @@
 package tech.challenge.foroHub.domain.topico;
 
-import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -37,7 +36,7 @@ public class RegistrarTopicoService {
         if (usuarioRepository.findById(datosRegistroTopico.usuario_id()).isEmpty()){
             throw new ValidacionDeIntegridad("El usuario no fue encontrado");
         }
-        System.out.println("Entra");
+
         validadores.forEach(v -> v.validar(datosRegistroTopico));
 
         var topico = new Topico(datosRegistroTopico);
@@ -46,7 +45,7 @@ public class RegistrarTopicoService {
         Topico topicoRet = topicoRepository.save(topico);
 
         DatosRespuestaTopico datosRespuestaTopico = new DatosRespuestaTopico(topicoRet.getId(), topicoRet.getTitulo(),
-                topicoRet.getMensaje(), topicoRet.getFecha_creacion().toString(), topicoRet.getEstado().toString(),
+                topicoRet.getMensaje(), topicoRet.getFechacreacion().toString(), topicoRet.getEstado().toString(),
                 topicoRet.getCurso().getId(), topicoRet.getAutor().getId());
 
         URI url = uriComponentsBuilder.path("/topicos/{id}").buildAndExpand(topicoRet.getId()).toUri();

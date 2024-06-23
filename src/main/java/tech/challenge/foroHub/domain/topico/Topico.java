@@ -26,7 +26,7 @@ public class Topico {
     private Long id;
     private String titulo;
     private String mensaje;
-    private LocalDateTime fecha_creacion;
+    private LocalDateTime fechacreacion;
     @Enumerated(EnumType.STRING)
     private Estado estado;
     @ManyToOne
@@ -45,7 +45,7 @@ public class Topico {
         LocalDateTime ahora = LocalDateTime.now();
         DateTimeFormatter formateador = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String horaFormateada = ahora.format(formateador);
-        this.fecha_creacion = LocalDateTime.parse(horaFormateada, formateador);
+        this.fechacreacion = LocalDateTime.parse(horaFormateada, formateador);
 
         this.estado = Estado.SIN_SOLUCION;
 
