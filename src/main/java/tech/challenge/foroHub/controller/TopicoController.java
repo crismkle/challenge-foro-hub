@@ -14,10 +14,6 @@ import tech.challenge.foroHub.domain.topico.*;
 import tech.challenge.foroHub.domain.usuario.UsuarioRepository;
 import tech.challenge.foroHub.infra.errores.ValidacionDeIntegridad;
 
-import java.net.URI;
-import java.util.List;
-
-import static java.util.stream.Collectors.toList;
 
 
 @RestController
@@ -46,21 +42,25 @@ public class TopicoController {
     @GetMapping
     public ResponseEntity<Page> listadoTopicos(@PageableDefault(size = 10)Pageable paginacion){
 
-        return ResponseEntity.ok(topicoRepository.listarTopicos(paginacion)
-                .map(DatosListadoTopico::new));
+        return service.listarTopicos(paginacion);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<DatosListadoTopico> listarDetalleTopico(@PathVariable Long id){
 
-        if (topicoRepository.findById(id).isEmpty()){
-            throw new ValidacionDeIntegridad("El tópico no fue encontrado");
-        }
-        Topico topico = topicoRepository.getReferenceById(id);
-        var datosTopico = new DatosListadoTopico(topico);
-
-        return ResponseEntity.ok(datosTopico);
+        return service.listarDetalleTopicos(id);
     }
+
+//    @PutMapping("/{id}")
+//    @Transactional
+//    public ResponseEntity<DatosRespuestaTopico> actualizarTopico(@PathVariable Long id){
+//
+//        if (topicoRepository.findById(id).isEmpty()){
+//            throw new ValidacionDeIntegridad("El tópico no fue encontrado. Verifique el id.");
+//        }
+//
+//
+//    }
 
 }
 
