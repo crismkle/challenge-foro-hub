@@ -49,6 +49,20 @@ public class Topico {
 
         this.estado = Estado.SIN_SOLUCION;
 
+    }
 
+    public void actualizarDatos(DatosActualizarTopico datosActualizarTopico, Curso curso, Usuario autor){
+        if (datosActualizarTopico.titulo() != null) {
+            this.titulo = datosActualizarTopico.titulo();
+        }
+        if (datosActualizarTopico.mensaje() != null){
+            this.mensaje = datosActualizarTopico.mensaje();
+        }
+        if (curso != null){
+            this.curso = curso;
+        }
+        if (autor != null){
+            this.autor = autor;
+        }
     }
 }

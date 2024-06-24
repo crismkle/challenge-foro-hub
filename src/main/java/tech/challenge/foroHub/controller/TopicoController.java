@@ -12,8 +12,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 import tech.challenge.foroHub.domain.curso.CursoRepository;
 import tech.challenge.foroHub.domain.topico.*;
 import tech.challenge.foroHub.domain.usuario.UsuarioRepository;
-import tech.challenge.foroHub.infra.errores.ValidacionDeIntegridad;
-
 
 
 @RestController
@@ -30,7 +28,7 @@ public class TopicoController {
     private UsuarioRepository usuarioRepository;
 
     @Autowired
-    private RegistrarTopicoService service;
+    private TopicoService service;
 
     @PostMapping
     @Transactional
@@ -51,16 +49,12 @@ public class TopicoController {
         return service.listarDetalleTopicos(id);
     }
 
-//    @PutMapping("/{id}")
-//    @Transactional
-//    public ResponseEntity<DatosRespuestaTopico> actualizarTopico(@PathVariable Long id){
-//
-//        if (topicoRepository.findById(id).isEmpty()){
-//            throw new ValidacionDeIntegridad("El tópico no fue encontrado. Verifique el id.");
-//        }
-//
-//
-//    }
+    @PutMapping("/{id}")
+    @Transactional
+    public ResponseEntity<DatosRespuestaTopico> actualizaTopico(@RequestBody @Valid DatosActualizarTopico datosActualizarTopico, @PathVariable Long id, UriComponentsBuilder uriComponentsBuilder){
+
+        return service.actualizarTopico(datosActualizarTopico, id, uriComponentsBuilder);
+    }
 
 }
 
