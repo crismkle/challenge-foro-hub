@@ -56,6 +56,13 @@ public class TopicoController {
         return service.actualizarTopico(datosActualizarTopico, id, uriComponentsBuilder);
     }
 
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity eliminarTopico(@PathVariable Long id){
+
+        return service.eliminarTopico(id);
+    }
+
 }
 
 

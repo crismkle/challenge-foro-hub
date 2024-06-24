@@ -141,4 +141,15 @@ public class TopicoService {
         DatosRegistroTopico datosRegistroTopico = new DatosRegistroTopico(titulo, mensaje, nombreCurso, usuario_id);
         return datosRegistroTopico;
     }
+
+    public ResponseEntity eliminarTopico(Long id) {
+
+        if (topicoRepository.findById(id).isEmpty()){
+            throw new ValidacionDeIntegridad("El tópico no fue encontrado. Verifique el id.");
+        }
+
+        topicoRepository.deleteById(id);
+
+        return ResponseEntity.noContent().build();
+    }
 }
