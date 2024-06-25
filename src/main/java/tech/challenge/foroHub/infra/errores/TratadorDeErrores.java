@@ -8,6 +8,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.sql.SQLIntegrityConstraintViolationException;
+
 
 @RestControllerAdvice
 public class TratadorDeErrores {
@@ -31,6 +33,11 @@ public class TratadorDeErrores {
 
     @ExceptionHandler(ValidationException.class)
     public ResponseEntity errorHandlerValidacionDeNegocio(Exception e){
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+
+    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
+    public ResponseEntity errorConstraintFK(Exception e){
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 
