@@ -36,8 +36,8 @@ public class TratadorDeErrores {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 
-    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
-    public ResponseEntity errorConstraintFK(Exception e){
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity errorArgumentoIlegal(Exception e){
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 

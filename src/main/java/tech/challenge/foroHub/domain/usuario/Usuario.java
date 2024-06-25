@@ -1,13 +1,12 @@
 package tech.challenge.foroHub.domain.usuario;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import tech.challenge.foroHub.domain.respuesta.Respuesta;
+import tech.challenge.foroHub.domain.topico.Topico;
 
 import java.util.Collection;
 import java.util.List;
@@ -15,6 +14,7 @@ import java.util.List;
 @Table(name = "usuarios")
 @Entity(name = "Usuario")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -27,6 +27,17 @@ public class Usuario implements UserDetails {
     private String clave;
     @Enumerated(EnumType.STRING)
     private Perfil perfil;
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    List<Topico> topicos;
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    List<Respuesta> respuestas;
+
+    public Usuario(DatosRegistroUsuario datosRegistroUsuario) {
+        this.nombre = datosRegistroUsuario.nombre();
+        this.email = datosRegistroUsuario.email();
+        this.clave = datosRegistroUsuario.clave();
+        this.perfil = Perfil.fromString(datosRegistroUsuario.perfil());
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

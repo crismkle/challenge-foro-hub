@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import tech.challenge.foroHub.domain.topico.DatosRegistroTopico;
 import tech.challenge.foroHub.domain.topico.Topico;
 import tech.challenge.foroHub.domain.topico.TopicoRepository;
-import tech.challenge.foroHub.infra.errores.ValidacionDeIntegridad;
 
 import java.util.List;
 

@@ -8,13 +8,15 @@ public record DatosRegistroUsuario(
         @NotBlank
         String nombre,
         @Email
+        @NotNull
         String email,
         @NotBlank
         String clave,
-        @NotNull
-        Perfil perfil
+        @NotBlank
+        String perfil
 ) {
-        public DatosRegistroUsuario(String nombre, String email, String clave, Perfil perfil) {
+
+        public DatosRegistroUsuario(String nombre, String email, String clave, String perfil) {
                 this.nombre = nombre;
                 this.email = email;
                 this.clave = clave;
