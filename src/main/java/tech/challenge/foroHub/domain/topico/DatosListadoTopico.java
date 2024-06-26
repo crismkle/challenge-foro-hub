@@ -6,14 +6,14 @@ public record DatosListadoTopico(
         Long id,
         String titulo,
         String mensaje,
-        LocalDateTime fechacreacion,
+        LocalDateTime fecha_creacion,
         String estado,
         String curso,
         String autor
 ) {
 
     public DatosListadoTopico(Topico topico){
-        this(topico.getId(), topico.getTitulo(), topico.getMensaje(), topico.getFechacreacion(),
+        this(topico.getId(), topico.getTitulo(), topico.getMensaje(), topico.getFecha_creacion(),
                 topico.getEstado().toString(), topico.getCurso().getNombre(), topico.getAutor().getNombre());
     }
 

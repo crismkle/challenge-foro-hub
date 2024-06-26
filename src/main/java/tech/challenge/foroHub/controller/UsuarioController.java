@@ -16,9 +16,6 @@ import tech.challenge.foroHub.domain.usuario.*;
 public class UsuarioController {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
-
-    @Autowired
     private UsuarioService service;
 
     @PostMapping

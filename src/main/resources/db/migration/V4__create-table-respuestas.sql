@@ -7,8 +7,6 @@ create table respuestas(
     usuario_id bigint not null,
     topico_id bigint not null,
 
-    primary key(id),
+    primary key(id)
 
-    constraint fk_respuesta_usuario_id foreign key(usuario_id) references usuarios(id),
-    constraint fk_respuesta_topico_id foreign key(topico_id) references topicos(id)
 );

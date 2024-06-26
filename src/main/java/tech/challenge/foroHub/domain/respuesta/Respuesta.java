@@ -4,10 +4,12 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import tech.challenge.foroHub.domain.topico.Estado;
 import tech.challenge.foroHub.domain.topico.Topico;
 import tech.challenge.foroHub.domain.usuario.Usuario;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Table(name = "respuestas")
 @Entity(name = "Respuesta")
@@ -28,4 +30,37 @@ public class Respuesta {
     @JoinColumn(name = "usuario_id")
     Usuario autor;
     private Boolean solucion;
+
+    public Respuesta(DatosRegistroRespuesta datosRegistroRespuesta, Topico topico, Usuario autor) {
+        this.mensaje = datosRegistroRespuesta.mensaje();
+
+        LocalDateTime ahora = LocalDateTime.now();
+        DateTimeFormatter formateador = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String horaFormateada = ahora.format(formateador);
+        this.fecha_creacion = LocalDateTime.parse(horaFormateada, formateador);
+
+        this.topico = topico;
+        this.autor = autor;
+        this.solucion = false;
+    }
+
+    public void actualizarDatos(DatosActualizarRespuesta datosActualizarRespuesta, Topico topico, Usuario autor) {
+        if (datosActualizarRespuesta.mensaje() != null){
+            this.mensaje = datosActualizarRespuesta.mensaje();
+        }
+        if (topico != null){
+            this.topico = topico;
+        }
+        if (autor != null){
+            this.autor = autor;
+        }
+        if (datosActualizarRespuesta.solucion() != null){
+            if (datosActualizarRespuesta.solucion()){
+                this.solucion = true;
+                this.topico.setEstado(Estado.SOLUCIONADO);
+            }else{
+                this.solucion = false;
+            }
+        }
+    }
 }

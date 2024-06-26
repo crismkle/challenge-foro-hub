@@ -1,7 +1,5 @@
 package tech.challenge.foroHub.domain.topico;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,7 +20,7 @@ import java.util.List;
 public class TopicoService {
 
     @Autowired
-    public TopicoRepository topicoRepository;
+    private TopicoRepository topicoRepository;
 
     @Autowired
     private CursoRepository cursoRepository;
@@ -51,7 +49,7 @@ public class TopicoService {
         Topico topicoRet = topicoRepository.save(topico);
 
         DatosRespuestaTopico datosRespuestaTopico = new DatosRespuestaTopico(topicoRet.getId(), topicoRet.getTitulo(),
-                topicoRet.getMensaje(), topicoRet.getFechacreacion().toString(), topicoRet.getEstado().toString(),
+                topicoRet.getMensaje(), topicoRet.getFecha_creacion().toString(), topicoRet.getEstado().toString(),
                 topicoRet.getCurso().getId(), topicoRet.getAutor().getId());
 
         URI url = uriComponentsBuilder.path("/topicos/{id}").buildAndExpand(topicoRet.getId()).toUri();
@@ -110,7 +108,7 @@ public class TopicoService {
         topico.actualizarDatos(datosActualizarTopico, curso, usuario);
 
         DatosRespuestaTopico datosRespuestaTopico = new DatosRespuestaTopico(topico.getId(), topico.getTitulo(),
-                topico.getMensaje(), topico.getFechacreacion().toString(), topico.getEstado().toString(),
+                topico.getMensaje(), topico.getFecha_creacion().toString(), topico.getEstado().toString(),
                 topico.getCurso().getId(), topico.getAutor().getId());
 
         URI url = uriComponentsBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();

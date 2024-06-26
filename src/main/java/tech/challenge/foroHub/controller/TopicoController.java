@@ -9,23 +9,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import tech.challenge.foroHub.domain.curso.CursoRepository;
 import tech.challenge.foroHub.domain.topico.*;
-import tech.challenge.foroHub.domain.usuario.UsuarioRepository;
 
 
 @RestController
 @RequestMapping("/topicos")
 public class TopicoController {
-
-    @Autowired
-    private TopicoRepository topicoRepository;
-
-    @Autowired
-    private CursoRepository cursoRepository;
-
-    @Autowired
-    private UsuarioRepository usuarioRepository;
 
     @Autowired
     private TopicoService service;
