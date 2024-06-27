@@ -35,7 +35,7 @@ public class Topico {
     @ManyToOne
     @JoinColumn(name = "usuario_id")
     Usuario autor;
-    @OneToMany(mappedBy = "topico", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "topico", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     List<Respuesta> respuestas;
 
     public Topico(DatosRegistroTopico datosRegistroTopico) {

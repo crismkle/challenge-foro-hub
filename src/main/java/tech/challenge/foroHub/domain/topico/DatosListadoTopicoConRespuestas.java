@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public record DatosListadoTopico(
+public record DatosListadoTopicoConRespuestas(
         Long id,
         String titulo,
         String mensaje,
@@ -17,7 +17,7 @@ public record DatosListadoTopico(
         List<DatosListadoRespuestaEnTopico> respuestas
 ) {
 
-    public DatosListadoTopico(Topico topico){
+    public DatosListadoTopicoConRespuestas(Topico topico){
         this(topico.getId(), topico.getTitulo(), topico.getMensaje(), topico.getFecha_creacion(),
                 topico.getEstado().toString(), topico.getCurso().getNombre(), topico.getAutor().getNombre(),
                 topico.getRespuestas().stream()

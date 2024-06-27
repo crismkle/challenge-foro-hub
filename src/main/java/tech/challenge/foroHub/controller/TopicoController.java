@@ -35,7 +35,7 @@ public class TopicoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<DatosListadoTopico> listarDetalleTopico(@PathVariable Long id){
+    public ResponseEntity<DatosListadoTopicoConRespuestas> listarDetalleTopico(@PathVariable Long id){
 
         return service.listarDetalleTopicos(id);
     }

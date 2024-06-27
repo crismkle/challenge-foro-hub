@@ -60,17 +60,17 @@ public class TopicoService {
     public ResponseEntity<Page> listarTopicos(Pageable paginacion){
 
         return ResponseEntity.ok(topicoRepository.listarTopicos(paginacion)
-                .map(DatosListadoTopico::new));
+                .map(DatosListadoTopicoConRespuestas::new));
     }
 
-    public ResponseEntity<DatosListadoTopico> listarDetalleTopicos(Long id){
+    public ResponseEntity<DatosListadoTopicoConRespuestas> listarDetalleTopicos(Long id){
 
         if (topicoRepository.findById(id).isEmpty()){
             throw new ValidacionDeIntegridad("El tópico no fue encontrado. Verifique el id.");
         }
 
         Topico topico = topicoRepository.getReferenceById(id);
-        var datosTopico = new DatosListadoTopico(topico);
+        var datosTopico = new DatosListadoTopicoConRespuestas(topico);
 
         return ResponseEntity.ok(datosTopico);
     }
@@ -146,7 +146,7 @@ public class TopicoService {
             throw new ValidacionDeIntegridad("El tópico no fue encontrado. Verifique el id.");
         }
 
-        topicoRepository.deleteById(id);
+        topicoRepository.borrarTopico(id);
 
         return ResponseEntity.noContent().build();
     }

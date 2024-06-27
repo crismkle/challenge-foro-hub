@@ -9,12 +9,13 @@ public record DatosListadoRespuesta(
         Long id,
         String mensaje,
         LocalDateTime fecha_creacion,
-        DatosListadoTopico topico,
         String autor,
-        Boolean solucion
+        Boolean solucion,
+        DatosListadoTopico topico
 ) {
     public DatosListadoRespuesta(Respuesta respuesta){
         this(respuesta.getId(), respuesta.getMensaje(), respuesta.getFecha_creacion(),
-                new DatosListadoTopico(respuesta.getTopico()), respuesta.getAutor().getNombre(), respuesta.getSolucion());
+                respuesta.getAutor().getNombre(), respuesta.getSolucion(),
+                new DatosListadoTopico(respuesta.getTopico()));
     }
 }
