@@ -64,5 +64,8 @@ public class Topico {
         if (autor != null){
             this.autor = autor;
         }
+        if (datosActualizarTopico.estado() != null){
+            this.estado = Estado.fromString(datosActualizarTopico.estado());
+        }
     }
 }

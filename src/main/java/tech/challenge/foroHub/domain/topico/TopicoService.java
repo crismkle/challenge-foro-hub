@@ -101,7 +101,10 @@ public class TopicoService {
         }
 
         Topico topico = topicoRepository.getReferenceById(id);
-        DatosRegistroTopico datosRegistroTopico = realizarCopiaActualizado(topico, datosActualizarTopico);
+
+        DatosRegistroTopico datosRegistroTopico = new DatosRegistroTopico(datosActualizarTopico.titulo(),
+                datosActualizarTopico.mensaje(), datosActualizarTopico.nombreCurso(),
+                datosActualizarTopico.usuario_id());
 
         validadores.forEach(v -> v.validar(datosRegistroTopico));
 
@@ -117,28 +120,6 @@ public class TopicoService {
 
     }
 
-    private DatosRegistroTopico realizarCopiaActualizado(Topico topico, DatosActualizarTopico datosActualizarTopico) {
-        String titulo = topico.getTitulo();
-        String mensaje = topico.getMensaje();
-        String nombreCurso = topico.getCurso().getNombre();
-        Long usuario_id = topico.getAutor().getId();
-
-        if(datosActualizarTopico.titulo() != null){
-            titulo = datosActualizarTopico.titulo();
-        }
-        if(datosActualizarTopico.mensaje() != null){
-            mensaje = datosActualizarTopico.mensaje();
-        }
-        if(datosActualizarTopico.nombreCurso() != null){
-            nombreCurso = datosActualizarTopico.nombreCurso();
-        }
-        if(datosActualizarTopico.usuario_id() != null){
-            usuario_id = datosActualizarTopico.usuario_id();
-        }
-
-        DatosRegistroTopico datosRegistroTopico = new DatosRegistroTopico(titulo, mensaje, nombreCurso, usuario_id);
-        return datosRegistroTopico;
-    }
 
     public ResponseEntity eliminarTopico(Long id) {
 
