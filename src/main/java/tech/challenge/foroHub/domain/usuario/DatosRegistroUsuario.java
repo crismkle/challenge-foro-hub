@@ -5,14 +5,14 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record DatosRegistroUsuario(
-        @NotBlank
+        @NotBlank(message = "Nombre es obligatorio")
         String nombre,
         @Email
-        @NotNull
+        @NotNull(message = "Email es obligatorio")
         String email,
-        @NotBlank
+        @NotBlank(message = "Clave es obligatorio")
         String clave,
-        @NotBlank
+        @NotBlank(message = "Perfil es obligatorio")
         String perfil
 ) {
 
