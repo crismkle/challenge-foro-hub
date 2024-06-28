@@ -14,6 +14,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     UserDetails findByEmail(String username);
 
-    @Query("SELECT u FROM Usuario u ORDER BY u.nombre ASC")
+    @Query("SELECT u FROM Usuario u ORDER BY u.id ASC")
     Page<Usuario> listarUsuarios(Pageable paginacion);
 }
