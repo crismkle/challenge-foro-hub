@@ -25,8 +25,6 @@ En resumen, nuestro objetivo con este challenge es implementar una API REST con 
 - Implementación de una base de datos relacional para la persistencia de la información;
 - Servicio de autenticación/autorización para restringir el acceso a la información.
 
-## :hammer:Funcionalidades del proyecto
-
 
 ## :toolbox: Tecnologías utilizadas
 - Java JDK v17
@@ -43,19 +41,45 @@ En resumen, nuestro objetivo con este challenge es implementar una API REST con 
 - Lombok
 
 
+## :hammer:Funcionalidades del proyecto
+1. Registro de usuario
+2. Login de usuario
+3. Listado, actualización y borrado de usuario
+4. Creación, listado, listado por id, actualización y borrado de un tópico
+5. Creación, listado, actualización y borrado de una respuesta
+6. Del 3 al 5 exige el token de seguridad del logueo
+
+
+## :keyboard: Comentarios del código
+
+
 ## 📦 Despliegue
 
-Usar un IDE para Java, preferentemente IntelliJ.
-Usar MySQL para la base de datos. Configurar variables de entorno de application.properties para la BD y JWT.
-Usar un REST client como Insomnia o Postman para realizar los requests. También puede probar el proyecto con la documentación de SpringDoc, usando la herramienta Swagger.
+Sigue estos pasos para ejecutar el proyecto en tu equipo, recuerda tener instalado el JDK.
+1. Clona el repositorio en tu equipo.
+2. Importa el proyecto a IntelliJ u otro IDE que soporte Java
+3. Crea la base de datos "foro-api" en MySQL
+4. Configura las variables de entorno para la BD y JWT en application.properties
+5. Ejecuta el proyecto
+6. Crea y prueba las requests en algún Rest Client como Insomnia o Postman
+7. También puedes probar el proyecto con SpringDoc, usando la herramienta Swagger
 
 
-## 💻 Ejemplo
+## :tv: Ejemplos
 
-Uso de todas las funcionalidades:
+Uso de todas las funcionalidades.
 
+### CRUD de tópicos:
 
+https://github.com/crismkle/challenge-foro-hub/assets/122938039/e7b69531-2bc2-44a5-be70-0f816f714bc4
 
+### CRUD de respuestas:
+
+https://github.com/crismkle/challenge-foro-hub/assets/122938039/d394baa0-2cfd-4718-a440-f58db51ff093
+
+### CRUD de usuarios:
+
+https://github.com/crismkle/challenge-foro-hub/assets/122938039/743ad33d-43c4-4919-9295-4c14b240be18
 
 
 ## ✒️ Autor
