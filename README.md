@@ -3,6 +3,7 @@
 Proyecto Challenge del curso de Java y Spring Boot de Alura/Oracle.
 El mismo consiste en una API Rest que simula un foro para resolver dudas relacionadas a ciertos cursos.
 El foro tiene sus tópicos, respuestas de los tópicos, cursos y usuarios.
+
 ![Badge-Spring](https://github.com/crismkle/challenge-foro-hub/assets/122938039/86e9f180-ddda-4059-8b46-911a742ecfe5)
 
 ## :clipboard: Enunciado
